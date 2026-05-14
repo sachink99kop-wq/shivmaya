@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShivMaya Tech Solutions | Premium App & Website Development Kolhapur</title>
+    <meta name="description"
+        content="Elevate your business with ShivMaya Tech Solutions. We provide affordable Android app development, custom websites, and digital marketing services in Kolhapur.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0a0a12',
+                        secondary: '#0f0f1a',
+                        accent: {
+                            cyan: '#00d4ff',
+                            purple: '#7b2fff',
+                            green: '#00ff88'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-primary text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-accent-purple selection:text-white">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/9960815081" target="_blank" rel="noopener noreferrer" class="float-whatsapp animate-float"
+        aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 py-5 transition-all duration-400">
+        <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+            <a href="index.html" class="flex flex-col z-50 relative group">
+                <span class="text-2xl font-display font-bold tracking-tight leading-none">
+                    <span class="gradient-text">ShivMaya</span><span class="text-white font-light">Tech</span>
+                </span>
+                <span
+                    class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold mt-1 group-hover:text-accent-cyan transition-colors">Solutions</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="desktop-nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors relative nav-link-effect">Home</a>
+                <a href="about.html"
+                    class="desktop-nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors relative nav-link-effect">About
+                    Us</a>
+                <div class="relative group py-5">
+                    <a href="services.html"
+                        class="desktop-nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors relative nav-link-effect flex items-center gap-1">
+                        Services
+                        <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute top-full left-0 mt-0 w-56 bg-[#0f0f1a]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left group-hover:translate-y-0 translate-y-2 py-2 flex flex-col z-50">
+                        <a href="android-dev.html"
+                            class="px-5 py-2.5 text-sm text-gray-300 hover:text-accent-cyan hover:bg-white/5 transition-colors">Android
+                            App Development</a>
+                        <a href="website-dev.html"
+                            class="px-5 py-2.5 text-sm text-gray-300 hover:text-accent-cyan hover:bg-white/5 transition-colors">Website
+                            Development</a>
+                        <a href="custom-software.html"
+                            class="px-5 py-2.5 text-sm text-gray-300 hover:text-accent-cyan hover:bg-white/5 transition-colors">Custom Software Solutions</a>
+                        <a href="data-entry.html"
+                            class="px-5 py-2.5 text-sm text-gray-300 hover:text-accent-cyan hover:bg-white/5 transition-colors">Data Entry and Management</a>
+                        <a href="digital-marketing.html"
+                            class="px-5 py-2.5 text-sm text-gray-300 hover:text-accent-cyan hover:bg-white/5 transition-colors">Digital
+                            Marketing</a>
+                    </div>
+                </div>
+
+                <a href="blogs.html"
+                    class="desktop-nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors relative nav-link-effect">Blogs</a>
+                <a href="contact.html"
+                    class="px-6 py-2.5 bg-gradient-to-r from-accent-cyan to-accent-purple text-white rounded-full text-sm font-semibold hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,212,255,0.3)] transition-all duration-300">Contact
+                    us</a>
+            </div>
+
+            <!-- Hamburger -->
+            <div id="hamburger" class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50">
+                <span class="w-7 h-0.5 bg-white rounded-full transition-transform duration-300"></span>
+                <span class="w-7 h-0.5 bg-white rounded-full transition-opacity duration-300"></span>
+                <span class="w-7 h-0.5 bg-white rounded-full transition-transform duration-300"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-secondary/95 backdrop-blur-xl border-l border-white/10 z-40 transform translate-x-full transition-transform duration-400 flex flex-col justify-center px-8 space-y-8">
+        <a href="index.html" class="text-xl font-medium text-gray-300 hover:text-accent-cyan transition-colors">Home</a>
+        <a href="about.html" class="text-xl font-medium text-gray-300 hover:text-accent-cyan transition-colors">About
+            Us</a>
+        <div class="flex flex-col gap-3">
+            <a href="services.html"
+                class="text-xl font-medium text-gray-300 hover:text-accent-cyan transition-colors">Services</a>
+            <div class="flex flex-col gap-2 pl-4 border-l border-white/10 ml-2">
+                <a href="android-dev.html" class="text-gray-400 hover:text-accent-cyan transition-colors">Android
+                    App Development</a>
+                <a href="website-dev.html" class="text-gray-400 hover:text-accent-cyan transition-colors">Website
+                    Development</a>
+                <a href="custom-software.html" class="text-gray-400 hover:text-accent-cyan transition-colors">Custom Software Solutions</a>
+                <a href="data-entry.html" class="text-gray-400 hover:text-accent-cyan transition-colors">Data Entry and Management</a>
+                <a href="digital-marketing.html" class="text-gray-400 hover:text-accent-cyan transition-colors">Digital
+                    Marketing</a>
+            </div>
+        </div>
+
+        <a href="blogs.html"
+            class="text-xl font-medium text-gray-300 hover:text-accent-cyan transition-colors">Blogs</a>
+        <a href="contact.html"
+            class="inline-block text-center mt-4 px-6 py-3 bg-gradient-to-r from-accent-cyan to-accent-purple text-white rounded-full font-semibold">Contact
+            us</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Grid and glow backgrounds -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50">
+        </div>
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(0,212,255,0.1)_0%,transparent_70%),radial-gradient(ellipse_50%_40%_at_50%_60%,rgba(123,47,255,0.05)_0%,transparent_70%)] pointer-events-none">
+        </div>
+
+        <canvas id="particles-canvas" class="z-0"></canvas>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col items-center text-center mt-10">
+
+            <!-- Top Badge -->
+            <div class="inline-flex items-center gap-2 px-6 py-2 bg-[#002233]/40 border border-accent-cyan/40 rounded-full text-xs font-semibold text-accent-cyan tracking-widest uppercase mb-8 backdrop-blur-md reveal"
+                style="transition-delay: 100ms; box-shadow: 0 0 20px rgba(0,212,255,0.1);">
+                <span class="text-accent-cyan text-sm leading-none mt-[-2px]">✦</span> DIGITAL SERVICES & TECHNOLOGY
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-display font-bold leading-[1.1] tracking-tight mb-2 reveal"
+                style="transition-delay: 200ms;">
+                <span class="text-white drop-shadow-lg">Build. Launch. Grow.</span><br />
+                <span
+                    class="bg-gradient-to-r from-[#00d4ff] via-[#7b2fff] to-[#00ff88] text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(123,47,255,0.3)] block mt-2 pb-2">ShivMayaTech</span>
+            </h1>
+
+            <!-- Paragraph -->
+            <p class="text-lg md:text-xl text-gray-400 mt-6 mb-12 max-w-3xl leading-relaxed reveal"
+                style="transition-delay: 300ms;">
+                From stunning websites to powerful SaaS solutions — we craft digital experiences that drive real results
+                for your business.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16 reveal" style="transition-delay: 400ms;">
+                <a href="index.html#contact"
+                    class="px-8 py-3.5 bg-[#0a0a16]/80 border border-white/10 text-gray-300 rounded-lg font-medium hover:text-accent-cyan hover:border-accent-cyan/50 hover:bg-accent-cyan/10 transition-all duration-300 flex items-center gap-2 group backdrop-blur-md">
+                    Get Started <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+
+            </div>
+
+            <!-- Tags Row -->
+            <div class="flex flex-wrap justify-center gap-4 mb-20 reveal" style="transition-delay: 500ms;">
+                <div
+                    class="flex items-center gap-2 px-5 py-2.5 bg-[#121222]/80 border border-white/5 rounded-full text-sm text-gray-300 hover:border-accent-cyan/30 transition-colors cursor-default backdrop-blur-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(0,212,255,0.6)]"></div> App
+                    Development
+                </div>
+                <div
+                    class="flex items-center gap-2 px-5 py-2.5 bg-[#121222]/80 border border-white/5 rounded-full text-sm text-gray-300 hover:border-accent-purple/30 transition-colors cursor-default backdrop-blur-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent-purple shadow-[0_0_8px_rgba(123,47,255,0.6)]"></div>
+                    Website Design
+                </div>
+                <div
+                    class="flex items-center gap-2 px-5 py-2.5 bg-[#121222]/80 border border-white/5 rounded-full text-sm text-gray-300 hover:border-accent-cyan/30 transition-colors cursor-default backdrop-blur-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_rgba(0,212,255,0.6)]"></div> Data
+                    Entry and Management
+                </div>
+                <div
+                    class="flex items-center gap-2 px-5 py-2.5 bg-[#121222]/80 border border-white/5 rounded-full text-sm text-gray-300 hover:border-accent-purple/30 transition-colors cursor-default backdrop-blur-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent-purple shadow-[0_0_8px_rgba(123,47,255,0.6)]"></div>
+                    Digital Services
+                </div>
+                <div
+                    class="flex items-center gap-2 px-5 py-2.5 bg-[#121222]/80 border border-white/5 rounded-full text-sm text-gray-300 hover:border-accent-purple/30 transition-colors cursor-default backdrop-blur-sm">
+                    <div class="w-2 h-2 rounded-full bg-accent-purple shadow-[0_0_8px_rgba(123,47,255,0.6)]"></div>
+                    Custom Software Development
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 relative bg-secondary">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                <span
+                    class="inline-block px-4 py-1.5 bg-accent-cyan/10 border border-accent-cyan/20 rounded-full text-xs font-bold text-accent-cyan uppercase tracking-widest mb-4">Our
+                    Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">Premium Digital Services
+                </h2>
+                <p class="text-gray-400 text-lg">Comprehensive solutions crafted with precision and cutting-edge
+                    technology.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: App Development -->
+                <a href="android-dev.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-cyan/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">App Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Native and cross-platform mobile applications designed for seamless user experiences and high performance.</p>
+                    <div class="flex items-center text-accent-cyan text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Website Design -->
+                <a href="website-dev.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-purple/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Website Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Stunning, responsive, and modern websites tailored to elevate your brand's digital presence.</p>
+                    <div class="flex items-center text-accent-purple text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: SaaS Development -->
+                <a href="custom-software.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-cyan/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">SaaS Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Scalable, secure, and robust Software as a Service solutions built for modern business demands.</p>
+                    <div class="flex items-center text-accent-cyan text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Data Entry & Management -->
+                <a href="data-entry.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-purple/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Data Entry & Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Accurate, efficient, and secure data handling services to streamline your operations.</p>
+                    <div class="flex items-center text-accent-purple text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Custom Software -->
+                <a href="custom-software.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-cyan/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group" style="transition-delay: 400ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Custom Software</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Small to medium custom software solutions designed specifically to solve your unique business challenges.</p>
+                    <div class="flex items-center text-accent-cyan text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+
+                <!-- Card 6: Digital Marketing -->
+                <a href="digital-marketing.html" class="block bg-primary/70 border border-white/5 rounded-3xl p-8 backdrop-blur-lg hover:-translate-y-2 hover:border-accent-purple/30 transition-all duration-400 relative overflow-hidden service-card-glow reveal group" style="transition-delay: 500ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold mb-3">Digital Marketing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Strategic digital marketing services including SEO and social media to amplify your online visibility.</p>
+                    <div class="flex items-center text-accent-purple text-xs font-bold uppercase tracking-widest gap-2 group-hover:gap-3 transition-all">
+                        Learn More <span>→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="py-32 relative">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 reveal">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-accent-purple/10 border border-accent-purple/20 rounded-full text-xs font-bold text-accent-purple uppercase tracking-widest mb-4">Your Success is Our Code</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">Built on Innovation &
+                        Trust.</h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        ShivMaya Tech Solutions is Kolhapur's trusted technology partner for small businesses, shops, doctors, schools, and local organisations. We specialise in Android app development, website development, ERP training, and digital marketing — all at budgets that actually make sense for you. We believe digitalisation is not a luxury; it is a necessity for every business today.
+                    </p>
+
+
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent-cyan/10 flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Uncompromising Quality</h4>
+                                <p class="text-gray-400 text-sm">Premium code architecture and pixel-perfect designs
+                                    that stand the test of time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center shrink-0 mt-1">
+                                <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Agile Delivery</h4>
+                                <p class="text-gray-400 text-sm">Rapid development cycles ensuring you get to market
+                                    faster without sacrificing quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative reveal">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 blur-3xl rounded-full">
+                    </div>
+                    <div
+                        class="relative bg-secondary border border-white/10 rounded-3xl p-8 backdrop-blur-sm overflow-hidden shadow-2xl shadow-black/50">
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-cyan to-accent-purple">
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-white/5 pb-6 mb-6">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-xs text-gray-500 font-mono">shivmaya-tech.js</div>
+                        </div>
+                        <div class="font-mono text-sm space-y-2 text-gray-300">
+                            <p><span class="text-accent-purple">const</span> company = {</p>
+                            <p class="pl-4">name: <span class="text-accent-cyan">'ShivMaya Tech'</span>,</p>
+                            <p class="pl-4">focus: <span class="text-accent-cyan">'Premium Solutions'</span>,</p>
+                            <p class="pl-4">mission: () <span class="text-accent-purple">=></span> {</p>
+                            <p class="pl-8">return <span class="text-accent-cyan">'Empower businesses digitally'</span>;
+                            </p>
+                            <p class="pl-4">}</p>
+                            <p>};</p>
+                            <br>
+                            <p><span class="text-accent-green">// Initialize success</span></p>
+                            <p>company.mission();</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-32 relative bg-secondary">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center max-w-2xl mx-auto mb-24 reveal">
+                <span
+                    class="inline-block px-4 py-1.5 bg-accent-green/10 border border-accent-green/20 rounded-full text-xs font-bold text-accent-green uppercase tracking-widest mb-4">Workflow</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">Our Process</h2>
+                <p class="text-gray-400 text-lg">A streamlined, transparent approach from concept to deployment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative process-line">
+                <!-- Step 1 -->
+                <div class="relative text-center reveal group z-10">
+                    <div
+                        class="w-20 h-20 mx-auto bg-primary border-2 border-accent-cyan rounded-full flex items-center justify-center font-display text-2xl font-bold text-accent-cyan mb-6 group-hover:bg-gradient-to-r group-hover:from-accent-cyan group-hover:to-accent-purple group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,212,255,0.4)]">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Discovery</h3>
+                    <p class="text-gray-400 text-sm">We analyze your requirements and strategize the optimal technical
+                        path.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative text-center reveal group z-10" style="transition-delay: 100ms;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-primary border-2 border-accent-purple rounded-full flex items-center justify-center font-display text-2xl font-bold text-accent-purple mb-6 group-hover:bg-gradient-to-r group-hover:from-accent-purple group-hover:to-accent-cyan group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(123,47,255,0.4)]">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Design</h3>
+                    <p class="text-gray-400 text-sm">Crafting intuitive, stunning UI/UX wireframes and prototypes.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative text-center reveal group z-10" style="transition-delay: 200ms;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-primary border-2 border-accent-green rounded-full flex items-center justify-center font-display text-2xl font-bold text-accent-green mb-6 group-hover:bg-gradient-to-r group-hover:from-accent-green group-hover:to-accent-cyan group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,255,136,0.4)]">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Development</h3>
+                    <p class="text-gray-400 text-sm">Writing clean, scalable code to bring the designs to life.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative text-center reveal group z-10" style="transition-delay: 300ms;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-primary border-2 border-accent-cyan rounded-full flex items-center justify-center font-display text-2xl font-bold text-accent-cyan mb-6 group-hover:bg-gradient-to-r group-hover:from-accent-cyan group-hover:to-accent-purple group-hover:text-white group-hover:border-transparent transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,212,255,0.4)]">
+                        4
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Deployment</h3>
+                    <p class="text-gray-400 text-sm">Rigorous testing, launch, and ongoing premium support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-32 relative">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">Client <span
+                        class="gradient-text">Success Stories</span></h2>
+                <p class="text-gray-400 text-lg">Don't just take our word for it. Hear from our partners.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div
+                    class="bg-secondary border border-white/5 p-8 rounded-3xl hover:-translate-y-2 hover:border-accent-cyan/20 transition-all duration-300 reveal shadow-lg">
+                    <div class="flex text-yellow-400 mb-6 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 italic mb-8 leading-relaxed">"ShivMaya transformed our outdated portal into
+                        a sleek, modern SaaS application. The attention to detail and premium design quality exceeded
+                        our expectations."</p>
+
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-secondary border border-white/5 p-8 rounded-3xl hover:-translate-y-2 hover:border-accent-purple/20 transition-all duration-300 reveal shadow-lg"
+                    style="transition-delay: 100ms;">
+                    <div class="flex text-yellow-400 mb-6 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 italic mb-8 leading-relaxed">"The web design they delivered is absolutely
+                        stunning. Their team is responsive, highly skilled, and delivered exactly what was promised on
+                        time."</p>
+
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-secondary border border-white/5 p-8 rounded-3xl hover:-translate-y-2 hover:border-accent-cyan/20 transition-all duration-300 reveal shadow-lg"
+                    style="transition-delay: 200ms;">
+                    <div class="flex text-yellow-400 mb-6 text-sm">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 italic mb-8 leading-relaxed">"Flawless app development. The user interface
+                        is intuitive, and the backend is rock solid. ShivMaya is our go-to tech partner now."</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative bg-secondary">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">Let's Build Something
+                        <span class="gradient-text">Great.</span></h2>
+                    <p class="text-gray-400 text-lg mb-12">Have a project in mind? Reach out to us and let's discuss how
+                        we can help your business thrive in the digital landscape.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-300 mb-1">Email Us</h4>
+                                <p class="text-accent-cyan">info@shivmayatechsolutions.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-accent-purple/10 flex items-center justify-center text-accent-purple">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-300 mb-1">Call Us</h4>
+                                <p class="text-accent-purple">+91 99608 15081</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-primary border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl reveal">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">First Name</label>
+                                <input type="text" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
+                                    placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
+                                <input type="text" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
+                                    placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
+                                placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Service Required</label>
+                            <select
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors appearance-none">
+                                <option value="app" class="bg-primary text-white">App Development</option>
+                                <option value="web" class="bg-primary text-white">Website Design</option>
+                                <option value="saas" class="bg-primary text-white">SaaS Development</option>
+                                <option value="other" class="bg-primary text-white">Other Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea required rows="4"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors resize-none"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-4 bg-gradient-to-r from-accent-cyan to-accent-purple text-white rounded-xl font-semibold hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-20 pb-10 border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex flex-col mb-6 group">
+                        <span class="text-2xl font-display font-bold tracking-tight leading-none">
+                            <span class="gradient-text">ShivMaya</span><span class="text-white font-light">Tech</span>
+                        </span>
+                        <span
+                            class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold mt-1 group-hover:text-accent-cyan transition-colors">Solutions</span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">ShivMaya Tech Solutions is Kolhapur's trusted technology partner for small businesses, shops, doctors, schools, and local organisations. We specialise in Android app development, website development, ERP training, and digital marketing — all at budgets that actually make sense for you. We started with one goal: to bring the power of digital technology to every business owner who deserves it. No high costs, no complicated processes — just smart, simple, and affordable digital solutions. Because we believe digitalisation is not a luxury; it is a necessity for every business today.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-cyan hover:text-white transition-all"><svg
+                                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent-purple hover:text-white transition-all"><svg
+                                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all"><svg
+                                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="android-dev.html" class="text-gray-400 hover:text-accent-cyan text-sm transition-colors">Android
+                                App Development</a></li>
+                        <li><a href="website-dev.html" class="text-gray-400 hover:text-accent-cyan text-sm transition-colors">Website
+                                Development</a></li>
+                        <li><a href="custom-software.html" class="text-gray-400 hover:text-accent-cyan text-sm transition-colors">Custom Software Solutions</a></li>
+                        <li><a href="data-entry.html" class="text-gray-400 hover:text-accent-cyan text-sm transition-colors">Data Entry and Management</a></li>
+                        <li><a href="digital-marketing.html" class="text-gray-400 hover:text-accent-cyan text-sm transition-colors">Digital
+                                Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html#why-choose-us"
+                                class="text-gray-400 hover:text-accent-purple text-sm transition-colors">Why Choose
+                                Us</a></li>
+                        <li><a href="index.html#process"
+                                class="text-gray-400 hover:text-accent-purple text-sm transition-colors">Our Process</a>
+                        </li>
+                        <li><a href="index.html#testimonials"
+                                class="text-gray-400 hover:text-accent-purple text-sm transition-colors">Testimonials</a>
+                        </li>
+                        <li><a href="index.html#contact"
+                                class="text-gray-400 hover:text-accent-purple text-sm transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2026 ShivMaya Tech Solutions. All rights reserved.</p>
+                <div class="flex gap-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-accent-purple/20 backdrop-blur-xl border border-white/10 text-white rounded-2xl flex items-center justify-center opacity-0 invisible translate-y-10 transition-all duration-500 z-[60] hover:bg-accent-purple hover:scale-110 group shadow-2xl" aria-label="Back to Top">
+        <svg class="w-6 h-6 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Simple reveal animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Particles canvas animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 100;
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+                this.alpha = Math.random() * 0.5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.init();
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(0, 212, 255, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>
