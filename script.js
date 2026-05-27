@@ -204,30 +204,55 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== CONTACT FORM =====
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
       btn.innerHTML = `<svg class="animate-spin h-5 w-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>`;
       btn.disabled = true;
 
-      setTimeout(() => {
-        btn.innerHTML = '✓ Message Sent!';
-        btn.classList.remove('from-cyan-500', 'to-purple-600');
-        btn.classList.add('bg-emerald-500');
+      const formData = new FormData(form);
+      formData.append("access_key", "efeeec9a-d5cf-48f6-90af-06fc264c1610");
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          btn.innerHTML = '✓ Message Sent!';
+          btn.classList.remove('from-cyan-500', 'to-purple-600');
+          btn.classList.add('bg-emerald-500');
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            btn.classList.add('from-cyan-500', 'to-purple-600');
+            btn.classList.remove('bg-emerald-500');
+            form.reset();
+          }, 2500);
+        } else {
+          btn.innerHTML = '❌ Error!';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }, 2500);
+        }
+      } catch (error) {
+        console.error(error);
+        btn.innerHTML = '❌ Error!';
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.disabled = false;
-          btn.classList.add('from-cyan-500', 'to-purple-600');
-          btn.classList.remove('bg-emerald-500');
-          form.reset();
         }, 2500);
-      }, 1500);
+      }
     });
   }
 
   // ===== SMOOTH SCROLL FOR ALL ANCHORS =====
-  
+
   // ===== BACK TO TOP BUTTON =====
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {

@@ -216,26 +216,26 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">First Name</label>
-                                <input type="text" required
+                                <input type="text" name="first_name" required
                                     class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
                                     placeholder="John">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
-                                <input type="text" required
+                                <input type="text" name="last_name" required
                                     class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
                                     placeholder="Doe">
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                            <input type="email" required
+                            <input type="email" name="email" required
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors"
                                 placeholder="john@example.com">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Service Required</label>
-                            <select
+                            <select name="service"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors appearance-none">
                                 <option value="app" class="bg-primary text-white">App Development</option>
                                 <option value="web" class="bg-primary text-white">Website Design</option>
@@ -245,7 +245,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                            <textarea required rows="4"
+                            <textarea name="message" required rows="4"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-colors resize-none"
                                 placeholder="Tell us about your project..."></textarea>
                         </div>
